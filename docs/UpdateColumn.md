@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **reference** | [**Reference**](Reference.md) |  | [optional] 
 **formula** | [**Formula**](Formula.md) |  | [optional] 
 **date_time_format** | [**DateTimeFormat**](DateTimeFormat.md) |  | [optional] 
+**viewable** | **bool** |  | [optional] 
+**editable** | **bool** |  | [optional] 
 **new_id** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

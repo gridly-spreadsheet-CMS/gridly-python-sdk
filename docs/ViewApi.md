@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create**](ViewApi.md#create) | **POST** /v1/views | create
 [**export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export
 [**get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get
+[**get_statistic**](ViewApi.md#get_statistic) | **GET** /v1/views/{viewId}/statistic | getStatistic
 [**import_view**](ViewApi.md#import_view) | **POST** /v1/views/{viewId}/import | importView
 [**list**](ViewApi.md#list) | **GET** /v1/views | list
 [**merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge
@@ -53,13 +54,48 @@ with gridly.ApiClient(configuration) as api_client:
     api_instance = view_api.ViewApi(api_client)
     create_view = CreateView(
         name="name_example",
+        grid_id="grid_id_example",
         columns=[
             AddViewColumn(
-                editable=True,
                 id="id_example",
+                editable=True,
+                name="name_example",
+                description="description_example",
+                type="singleLine",
+                language_code="enUS",
+                localization_type="sourceLanguage",
+                number_format=NumberFormat(
+                    type="DECIMAL",
+                    decimal_places=1,
+                    currency_symbol="currency_symbol_example",
+                    use1000_separator=True,
+                ),
+                selection_options=[
+                    "selection_options_example",
+                ],
+                reference=Reference(
+                    grid_id="grid_id_example",
+                    branch_id="branch_id_example",
+                    column_id="column_id_example",
+                    type="ROW",
+                    selection_type="SINGLE",
+                ),
+                formula=Formula(
+                    formula_text="formula_text_example",
+                    always_format_result_value_as_list=True,
+                    detect_result_value_type="list",
+                ),
+                date_time_format=DateTimeFormat(
+                    date_format=DateFormat(
+                        name="name_example",
+                        format="format_example",
+                    ),
+                    time_format="hour12",
+                    zone_offset="zone_offset_example",
+                    show_time_zone=True,
+                ),
             ),
         ],
-        grid_id="grid_id_example",
     ) # CreateView | 
 
     # example passing only required values which don't have defaults set
@@ -275,6 +311,95 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**View**](View.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_statistic**
+> ViewStatistic get_statistic(view_id)
+
+getStatistic
+
+getStatistic
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import time
+import gridly
+from gridly.api import view_api
+from gridly.model.view_statistic import ViewStatistic
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.gridly.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gridly.Configuration(
+    host = "https://api.gridly.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with gridly.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = view_api.ViewApi(api_client)
+    view_id = "viewId_example" # str | viewId
+    column_ids = [] # [str], none_type | columnIds (optional) if omitted the server will use the default value of []
+
+    # example passing only required values which don't have defaults set
+    try:
+        # getStatistic
+        api_response = api_instance.get_statistic(view_id)
+        pprint(api_response)
+    except gridly.ApiException as e:
+        print("Exception when calling ViewApi->get_statistic: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # getStatistic
+        api_response = api_instance.get_statistic(view_id, column_ids=column_ids)
+        pprint(api_response)
+    except gridly.ApiException as e:
+        print("Exception when calling ViewApi->get_statistic: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **view_id** | **str**| viewId |
+ **column_ids** | **[str], none_type**| columnIds | [optional] if omitted the server will use the default value of []
+
+### Return type
+
+[**ViewStatistic**](ViewStatistic.md)
 
 ### Authorization
 

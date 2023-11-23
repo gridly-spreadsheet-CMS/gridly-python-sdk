@@ -135,6 +135,7 @@ with gridly.ApiClient(configuration) as api_client:
         fuzzy_match=True,
         is_disabled=True,
         is_paused_consuming=True,
+        context_lookup=True,
         populate_translation_status=TranslationStatus("upToDate"),
     ) # CreateTransMem |  (optional)
 
@@ -698,6 +699,7 @@ with gridly.ApiClient(configuration) as api_client:
         is_disabled=True,
         is_paused_consuming=True,
         populate_translation_status=TranslationStatus("upToDate"),
+        context_lookup=True,
     ) # UpdateTransMem |  (optional)
 
     # example passing only required values which don't have defaults set

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **date_time_format** | [**DateTimeFormat**](DateTimeFormat.md) |  | [optional] 
 **depends_on** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**editable** | **bool** |  | [optional] 
 **formula** | [**Formula**](Formula.md) |  | [optional] 
 **is_source** | **bool** |  | [optional] 
 **is_target** | **bool** |  | [optional] 
