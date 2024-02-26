@@ -23,6 +23,10 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
+    - name: Test env vars for python
+      env:
+        API_KEY: ${{ secrets.API_KEY }} 
+      run: python -c 'import os;print(os.environ['API_KEY'])
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
