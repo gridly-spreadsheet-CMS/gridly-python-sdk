@@ -27,7 +27,7 @@ jobs:
         python-version: "3.10"
     - name: Test env vars for python
       run: |
-        echo "apiKey: $API_KEY"
+        echo "apiKey: [$API_KEY]"
         python -c "import os;print(os.environ['API_KEY']);print(os.environ);"
       
     - name: Install dependencies
