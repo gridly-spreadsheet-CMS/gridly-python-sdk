@@ -12,7 +12,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "gridly"
-VERSION = "1.2.11"
+VERSION = "1.2.12"
 # To install the library, run the following
 #
 # python setup.py install

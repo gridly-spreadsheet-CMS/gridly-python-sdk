@@ -11,7 +11,7 @@
 """
 
 
-__version__ = "1.2.11"
+__version__ = "1.2.12"
 
 # import ApiClient
 from gridly.api_client import ApiClient

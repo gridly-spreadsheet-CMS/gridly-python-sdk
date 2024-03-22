@@ -410,7 +410,7 @@ conf = gridly.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 4.29.1\n"\
-               "SDK Package Version: 1.2.11".\
+               "SDK Package Version: 1.2.12".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
