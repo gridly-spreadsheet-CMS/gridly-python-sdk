@@ -534,7 +534,7 @@ with gridly.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transmem_api.TransmemApi(api_client)
     tm_id = "tmId_example" # str | 
-    file = open('/path/to/file', 'rb') # file_type | 
+    file = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -550,7 +550,7 @@ with gridly.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tm_id** | **str**|  |
- **file** | **file_type**|  |
+ **file** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  |
 
 ### Return type
 

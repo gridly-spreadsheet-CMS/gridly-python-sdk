@@ -310,13 +310,13 @@ with gridly.ApiClient(configuration) as api_client:
     api_instance = path_api.PathApi(api_client)
     view_id = "viewId_example" # str | viewId
     move_path = MovePath(
-        from_parent_path="from_parent_path_example",
-        move_after="move_after_example",
-        move_before="move_before_example",
         names=[
             "names_example",
         ],
+        from_parent_path="from_parent_path_example",
         to_parent_path="to_parent_path_example",
+        move_before="move_before_example",
+        move_after="move_after_example",
     ) # MovePath | 
 
     # example passing only required values which don't have defaults set

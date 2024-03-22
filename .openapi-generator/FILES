@@ -5,6 +5,8 @@ README.md
 docs/AddViewColumn.md
 docs/Branch.md
 docs/BranchApi.md
+docs/BranchDiffCell.md
+docs/BranchDiffRecord.md
 docs/Cell.md
 docs/CellHistory.md
 docs/ColumnReference.md
@@ -14,6 +16,7 @@ docs/CreateColumn.md
 docs/CreateDatabase.md
 docs/CreateDependency.md
 docs/CreateFileCategory.md
+docs/CreateGlossary.md
 docs/CreateGrid.md
 docs/CreatePath.md
 docs/CreateProject.md
@@ -22,7 +25,6 @@ docs/CreateTransMem.md
 docs/CreateView.md
 docs/Database.md
 docs/DatabaseApi.md
-docs/DateFormat.md
 docs/DateTimeFormat.md
 docs/DeleteDependency.md
 docs/DeleteFile.md
@@ -32,12 +34,22 @@ docs/Dependency.md
 docs/ExportFileHeader.md
 docs/ExportFormat.md
 docs/FetchFileOption.md
+docs/FetchRecordHistoryRequest.md
 docs/FileCategory.md
+docs/FilterField.md
 docs/Formula.md
+docs/Glossary.md
+docs/GlossaryApi.md
+docs/GlossaryExportFormat.md
+docs/GlossaryProject.md
 docs/Grid.md
 docs/GridApi.md
 docs/GridSetting.md
 docs/Group.md
+docs/ImportOption.md
+docs/MergeBranchRequest.md
+docs/MergeCellConflict.md
+docs/MergeRecordConflict.md
 docs/MovePath.md
 docs/NumberFormat.md
 docs/PathApi.md
@@ -71,6 +83,7 @@ docs/UpdateCategory.md
 docs/UpdateColumn.md
 docs/UpdateDatabase.md
 docs/UpdateDependency.md
+docs/UpdateGlossary.md
 docs/UpdateGrid.md
 docs/UpdateGridSetting.md
 docs/UpdatePath.md
@@ -91,6 +104,7 @@ gridly/__init__.py
 gridly/api/__init__.py
 gridly/api/branch_api.py
 gridly/api/database_api.py
+gridly/api/glossary_api.py
 gridly/api/grid_api.py
 gridly/api/path_api.py
 gridly/api/project_api.py
@@ -109,6 +123,8 @@ gridly/exceptions.py
 gridly/model/__init__.py
 gridly/model/add_view_column.py
 gridly/model/branch.py
+gridly/model/branch_diff_cell.py
+gridly/model/branch_diff_record.py
 gridly/model/cell.py
 gridly/model/cell_history.py
 gridly/model/column_reference.py
@@ -118,6 +134,7 @@ gridly/model/create_column.py
 gridly/model/create_database.py
 gridly/model/create_dependency.py
 gridly/model/create_file_category.py
+gridly/model/create_glossary.py
 gridly/model/create_grid.py
 gridly/model/create_path.py
 gridly/model/create_project.py
@@ -125,7 +142,6 @@ gridly/model/create_share_view.py
 gridly/model/create_trans_mem.py
 gridly/model/create_view.py
 gridly/model/database.py
-gridly/model/date_format.py
 gridly/model/date_time_format.py
 gridly/model/delete_dependency.py
 gridly/model/delete_file.py
@@ -135,11 +151,20 @@ gridly/model/dependency.py
 gridly/model/export_file_header.py
 gridly/model/export_format.py
 gridly/model/fetch_file_option.py
+gridly/model/fetch_record_history_request.py
 gridly/model/file_category.py
+gridly/model/filter_field.py
 gridly/model/formula.py
+gridly/model/glossary.py
+gridly/model/glossary_export_format.py
+gridly/model/glossary_project.py
 gridly/model/grid.py
 gridly/model/grid_setting.py
 gridly/model/group.py
+gridly/model/import_option.py
+gridly/model/merge_branch_request.py
+gridly/model/merge_cell_conflict.py
+gridly/model/merge_record_conflict.py
 gridly/model/move_path.py
 gridly/model/number_format.py
 gridly/model/path_list.py
@@ -167,6 +192,7 @@ gridly/model/update_category.py
 gridly/model/update_column.py
 gridly/model/update_database.py
 gridly/model/update_dependency.py
+gridly/model/update_glossary.py
 gridly/model/update_grid.py
 gridly/model/update_grid_setting.py
 gridly/model/update_path.py
@@ -186,4 +212,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_glossary_api.py
 tox.ini

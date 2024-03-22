@@ -86,11 +86,8 @@ with gridly.ApiClient(configuration) as api_client:
                     detect_result_value_type="list",
                 ),
                 date_time_format=DateTimeFormat(
-                    date_format=DateFormat(
-                        name="name_example",
-                        format="format_example",
-                    ),
-                    time_format="hour12",
+                    date_format="date_format_example",
+                    time_format="time_format_example",
                     zone_offset="zone_offset_example",
                     show_time_zone=True,
                 ),
@@ -593,7 +590,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **merge**
-> Task merge(destination_view_id, view_id)
+> Task merge(destination_view_id, view_id, merge_branch_request)
 
 merge
 
@@ -607,6 +604,7 @@ merge
 import time
 import gridly
 from gridly.api import view_api
+from gridly.model.merge_branch_request import MergeBranchRequest
 from gridly.model.task import Task
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.gridly.com
@@ -632,12 +630,42 @@ with gridly.ApiClient(configuration) as api_client:
     api_instance = view_api.ViewApi(api_client)
     destination_view_id = "destinationViewId_example" # str | destinationViewId
     view_id = "viewId_example" # str | viewId
+    merge_branch_request = MergeBranchRequest(
+        merge_record_options=[
+            "add",
+        ],
+        merge_record_conflicts=[
+            MergeRecordConflict(
+                cells=[
+                    MergeCellConflict(
+                        column_id="column_id_example",
+                        option="child",
+                    ),
+                ],
+                path_tag="path_tag_example",
+                record_id="record_id_example",
+            ),
+        ],
+        use_last_merge_resolve=True,
+        query=[
+            FilterField(
+                case_sensitive=True,
+                column_id="column_id_example",
+                operator="isNull",
+                query_path_tag_via_id=True,
+                sub_field="DEPENDENCY_STATUS",
+                values=[
+                    {},
+                ],
+            ),
+        ],
+    ) # MergeBranchRequest | 
     merge_record_options = [] # [str], none_type | mergeRecordOptions (optional) if omitted the server will use the default value of []
 
     # example passing only required values which don't have defaults set
     try:
         # merge
-        api_response = api_instance.merge(destination_view_id, view_id)
+        api_response = api_instance.merge(destination_view_id, view_id, merge_branch_request)
         pprint(api_response)
     except gridly.ApiException as e:
         print("Exception when calling ViewApi->merge: %s\n" % e)
@@ -646,7 +674,7 @@ with gridly.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # merge
-        api_response = api_instance.merge(destination_view_id, view_id, merge_record_options=merge_record_options)
+        api_response = api_instance.merge(destination_view_id, view_id, merge_branch_request, merge_record_options=merge_record_options)
         pprint(api_response)
     except gridly.ApiException as e:
         print("Exception when calling ViewApi->merge: %s\n" % e)
@@ -659,6 +687,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **destination_view_id** | **str**| destinationViewId |
  **view_id** | **str**| viewId |
+ **merge_branch_request** | [**MergeBranchRequest**](MergeBranchRequest.md)|  |
  **merge_record_options** | **[str], none_type**| mergeRecordOptions | [optional] if omitted the server will use the default value of []
 
 ### Return type
@@ -671,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

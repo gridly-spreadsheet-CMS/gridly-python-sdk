@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_histories**
-> [RecordHistory] fetch_histories(view_id, record_id)
+> [RecordHistory] fetch_histories(view_id, record_id, fetch_request)
 
 fetchHistories
 
@@ -317,6 +317,7 @@ import time
 import gridly
 from gridly.api import record_api
 from gridly.model.record_history import RecordHistory
+from gridly.model.fetch_record_history_request import FetchRecordHistoryRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.gridly.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -341,21 +342,24 @@ with gridly.ApiClient(configuration) as api_client:
     api_instance = record_api.RecordApi(api_client)
     view_id = "viewId_example" # str | viewId
     record_id = "recordId_example" # str | recordId
-    page = "{}" # str, none_type | page (optional) if omitted the server will use the default value of "{}"
+    fetch_request = FetchRecordHistoryRequest(
+        column_ids=[
+            "column_ids_example",
+        ],
+        query="query_example",
+        sort="sort_example",
+        group_by=[
+            "group_by_example",
+        ],
+        page="page_example",
+        fetch_options="fetch_options_example",
+        include_system_user=True,
+    ) # FetchRecordHistoryRequest | fetchRequest
 
     # example passing only required values which don't have defaults set
     try:
         # fetchHistories
-        api_response = api_instance.fetch_histories(view_id, record_id)
-        pprint(api_response)
-    except gridly.ApiException as e:
-        print("Exception when calling RecordApi->fetch_histories: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # fetchHistories
-        api_response = api_instance.fetch_histories(view_id, record_id, page=page)
+        api_response = api_instance.fetch_histories(view_id, record_id, fetch_request)
         pprint(api_response)
     except gridly.ApiException as e:
         print("Exception when calling RecordApi->fetch_histories: %s\n" % e)
@@ -368,7 +372,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **view_id** | **str**| viewId |
  **record_id** | **str**| recordId |
- **page** | **str, none_type**| page | [optional] if omitted the server will use the default value of "{}"
+ **fetch_request** | **FetchRecordHistoryRequest**| fetchRequest |
 
 ### Return type
 

@@ -164,11 +164,8 @@ with gridly.ApiClient(configuration) as api_client:
                 detect_result_value_type="list",
             ),
             date_time_format=DateTimeFormat(
-                date_format=DateFormat(
-                    name="name_example",
-                    format="format_example",
-                ),
-                time_format="hour12",
+                date_format="date_format_example",
+                time_format="time_format_example",
                 zone_offset="zone_offset_example",
                 show_time_zone=True,
             ),
@@ -284,11 +281,8 @@ with gridly.ApiClient(configuration) as api_client:
             detect_result_value_type="list",
         ),
         date_time_format=DateTimeFormat(
-            date_format=DateFormat(
-                name="name_example",
-                format="format_example",
-            ),
-            time_format="hour12",
+            date_format="date_format_example",
+            time_format="time_format_example",
             zone_offset="zone_offset_example",
             show_time_zone=True,
         ),
@@ -638,11 +632,8 @@ with gridly.ApiClient(configuration) as api_client:
             detect_result_value_type="list",
         ),
         date_time_format=DateTimeFormat(
-            date_format=DateFormat(
-                name="name_example",
-                format="format_example",
-            ),
-            time_format="hour12",
+            date_format="date_format_example",
+            time_format="time_format_example",
             zone_offset="zone_offset_example",
             show_time_zone=True,
         ),

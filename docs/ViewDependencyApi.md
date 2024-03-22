@@ -54,8 +54,8 @@ with gridly.ApiClient(configuration) as api_client:
     view_id = "viewId_example" # str | viewId
     create_dependency = CreateDependency(
         id="/qXzyC",
-        source_column_id="source_column_id_example",
         target_column_id="target_column_id_example",
+        source_column_id="source_column_id_example",
     ) # CreateDependency | 
 
     # example passing only required values which don't have defaults set
@@ -459,8 +459,8 @@ with gridly.ApiClient(configuration) as api_client:
     view_id = "viewId_example" # str | viewId
     update_dependency = UpdateDependency(
         new_id="/qXzyC",
-        source_column_id="source_column_id_example",
         target_column_id="target_column_id_example",
+        source_column_id="source_column_id_example",
     ) # UpdateDependency | 
 
     # example passing only required values which don't have defaults set

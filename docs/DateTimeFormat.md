@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date_format** | [**DateFormat**](DateFormat.md) |  | [optional] 
+**date_format** | **str** |  | [optional] 
 **time_format** | **str** |  | [optional] 
 **zone_offset** | **str** |  | [optional] 
 **show_time_zone** | **bool** |  | [optional] 

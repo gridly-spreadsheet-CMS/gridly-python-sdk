@@ -17,6 +17,7 @@
 from gridly.api.path_api import PathApi
 from gridly.api.branch_api import BranchApi
 from gridly.api.database_api import DatabaseApi
+from gridly.api.glossary_api import GlossaryApi
 from gridly.api.grid_api import GridApi
 from gridly.api.project_api import ProjectApi
 from gridly.api.record_api import RecordApi
