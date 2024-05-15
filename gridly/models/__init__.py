@@ -1,3 +1,5 @@
+# coding: utf-8
+
 # flake8: noqa
 
 # import all models into this package
@@ -86,8 +88,6 @@ from gridly.model.update_grid_setting import UpdateGridSetting
 from gridly.model.update_path import UpdatePath
 from gridly.model.update_project import UpdateProject
 from gridly.model.update_trans_mem import UpdateTransMem
-from gridly.model.upload_setting_file_request import UploadSettingFileRequest
-from gridly.model.upload_zip_request import UploadZipRequest
 from gridly.model.uploaded_file import UploadedFile
 from gridly.model.view import View
 from gridly.model.view_column import ViewColumn
