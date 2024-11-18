@@ -331,7 +331,7 @@ with gridly.ApiClient(configuration) as api_client:
         'page': "{}",
         'query': "{}",
         'sort': "{}",
-        'fetchFileOption': FetchFileOption("id"),
+        'fetchFileOption': FetchFileOption("all"),
         'afterRecordId': "afterRecordId_example",
         'beforeRecordId': "beforeRecordId_example",
     }

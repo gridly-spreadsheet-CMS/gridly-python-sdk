@@ -46,6 +46,7 @@ class TypeSchema(
             "accessView": "ACCESS_VIEW",
             "userView": "USER_VIEW",
             "workflowView": "WORKFLOW_VIEW",
+            "widgetView": "WIDGET_VIEW",
         }
     
     @schemas.classproperty
@@ -63,6 +64,10 @@ class TypeSchema(
     @schemas.classproperty
     def WORKFLOW_VIEW(cls):
         return cls("workflowView")
+    
+    @schemas.classproperty
+    def WIDGET_VIEW(cls):
+        return cls("widgetView")
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {

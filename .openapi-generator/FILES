@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 docs/apis/tags/BranchApi.md
+docs/apis/tags/CdnApi.md
 docs/apis/tags/DatabaseApi.md
 docs/apis/tags/GlossaryApi.md
 docs/apis/tags/GridApi.md
@@ -20,6 +21,7 @@ docs/models/AddViewColumn.md
 docs/models/Branch.md
 docs/models/BranchDiffCell.md
 docs/models/BranchDiffRecord.md
+docs/models/CDN.md
 docs/models/Cell.md
 docs/models/CellHistory.md
 docs/models/ColumnReference.md
@@ -48,6 +50,7 @@ docs/models/ExportFormat.md
 docs/models/FetchFileOption.md
 docs/models/FetchRecordHistoryRequest.md
 docs/models/FileCategory.md
+docs/models/FileType.md
 docs/models/FilterField.md
 docs/models/Formula.md
 docs/models/Glossary.md
@@ -65,7 +68,6 @@ docs/models/NumberFormat.md
 docs/models/PathList.md
 docs/models/PathNode.md
 docs/models/PathSingle.md
-docs/models/Privilege.md
 docs/models/Project.md
 docs/models/ProjectDetail.md
 docs/models/Record.md
@@ -74,7 +76,6 @@ docs/models/RecordIdentifierWrapper.md
 docs/models/Reference.md
 docs/models/ReferencedColumn.md
 docs/models/ReferencedGrid.md
-docs/models/Role.md
 docs/models/SetCell.md
 docs/models/SetRecord.md
 docs/models/SettingFile.md
@@ -102,6 +103,7 @@ gridly/__init__.py
 gridly/api_client.py
 gridly/apis/__init__.py
 gridly/apis/tags/branch_api.py
+gridly/apis/tags/cdn_api.py
 gridly/apis/tags/database_api.py
 gridly/apis/tags/glossary_api.py
 gridly/apis/tags/grid_api.py
@@ -126,6 +128,8 @@ gridly/model/branch_diff_cell.py
 gridly/model/branch_diff_cell.pyi
 gridly/model/branch_diff_record.py
 gridly/model/branch_diff_record.pyi
+gridly/model/cdn.py
+gridly/model/cdn.pyi
 gridly/model/cell.py
 gridly/model/cell.pyi
 gridly/model/cell_history.py
@@ -182,6 +186,8 @@ gridly/model/fetch_record_history_request.py
 gridly/model/fetch_record_history_request.pyi
 gridly/model/file_category.py
 gridly/model/file_category.pyi
+gridly/model/file_type.py
+gridly/model/file_type.pyi
 gridly/model/filter_field.py
 gridly/model/filter_field.pyi
 gridly/model/formula.py
@@ -216,8 +222,6 @@ gridly/model/path_node.py
 gridly/model/path_node.pyi
 gridly/model/path_single.py
 gridly/model/path_single.pyi
-gridly/model/privilege.py
-gridly/model/privilege.pyi
 gridly/model/project.py
 gridly/model/project.pyi
 gridly/model/project_detail.py
@@ -234,8 +238,6 @@ gridly/model/referenced_column.py
 gridly/model/referenced_column.pyi
 gridly/model/referenced_grid.py
 gridly/model/referenced_grid.pyi
-gridly/model/role.py
-gridly/model/role.pyi
 gridly/model/set_cell.py
 gridly/model/set_cell.pyi
 gridly/model/set_record.py

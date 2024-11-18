@@ -129,6 +129,7 @@ with gridly.ApiClient(configuration) as api_client:
     body = CreateProject(
         name="name_example",
         description="description_example",
+        type="DEFAULT",
     )
     try:
         # create

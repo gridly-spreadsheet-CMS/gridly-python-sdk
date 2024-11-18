@@ -13,7 +13,7 @@ Key | Input Type | Accessed Type | Description | Notes
 **columnId** | str,  | str,  |  | [optional] 
 **dynamicColumn** | str,  | str,  |  | [optional] 
 **queryPathTagViaId** | bool,  | BoolClass,  |  | [optional] 
-**subField** | str,  | str,  |  | [optional] must be one of ["DEPENDENCY_STATUS", "SOURCE_STATUS", "TARGET_STATUS", "FLOW_STATUS", "TM", "MT", "TICKET", "COLOR", "METADATA", "CELL_METADATA", "WORD_COUNT", "PREVIEW_SOURCE_DATA", "PREVIEW_SOURCE_DEPENDENCY_STATUS", "PREVIEW_STATUS", "PREVIEW_MERGE_OPTION", "RELATIVE_TIME", "LENGTH_VIOLATED", "LENGTH_SETTING", "WORKFLOW_STATUS", "REPETITION", "QA_CHECK_STATUS", ] 
+**subField** | str,  | str,  |  | [optional] must be one of ["_dependencyStatus", "_sourceStatus", "_targetStatus", "_flowStatus", "_tm", "_mt", "_ticket", "_color", "_metadata", "_cell_metadata", "_word_count", "_previewSourceData", "_previewSourceDependencyStatus", "_previewStatus", "_previewMergeOption", "_relativeTime", "_length_violated", "_lengthSetting", "_workflow", "_workflowStepTransitioned", "_repetition", "_qaCheckStatus", "_spellCheckStatus", "_hasTag", ] 
 **[values](#values)** | list, tuple,  | tuple,  |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 

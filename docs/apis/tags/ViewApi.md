@@ -104,7 +104,7 @@ str,  | str,  |  |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-str,  | str,  |  | must be one of ["defaultView", "accessView", "userView", "workflowView", ] 
+str,  | str,  |  | must be one of ["defaultView", "accessView", "userView", "workflowView", "widgetView", ] 
 
 ### Return Types, Responses
 
@@ -190,7 +190,7 @@ with gridly.ApiClient(configuration) as api_client:
                 language_code="enUS",
                 localization_type="sourceLanguage",
                 number_format=NumberFormat(
-                    type="DECIMAL",
+                    type="decimal",
                     decimal_places=1,
                     currency_symbol="currency_symbol_example",
                     use1000_separator=True,
@@ -202,8 +202,8 @@ with gridly.ApiClient(configuration) as api_client:
                     grid_id="grid_id_example",
                     branch_id="branch_id_example",
                     column_id="column_id_example",
-                    type="ROW",
-                    selection_type="SINGLE",
+                    type="row",
+                    selection_type="single",
                 ),
                 formula=Formula(
                     formula_text="formula_text_example",
@@ -287,6 +287,7 @@ export
 ```python
 import gridly
 from gridly.apis.tags import view_api
+from gridly.model.file_type import FileType
 from gridly.model.export_file_header import ExportFileHeader
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.gridly.com
@@ -335,7 +336,7 @@ with gridly.ApiClient(configuration) as api_client:
         'fileHeader': ExportFileHeader("none"),
         'query': "{}",
         'sort': "{}",
-        'type': "csv",
+        'type': FileType("csv"),
     }
     try:
         # export
@@ -403,11 +404,10 @@ Input Type | Accessed Type | Description | Notes
 None, str,  | NoneClass, str,  |  | if omitted the server will use the default value of "{}"
 
 # TypeSchema
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**FileType**](../../models/FileType.md) |  | 
 
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-None, str,  | NoneClass, str,  |  | must be one of ["csv", "tsv", "xls", "xlsx", "json", "po", "html", ] if omitted the server will use the default value of "csv"
 
 ### path_params
 #### RequestPathParams
@@ -787,6 +787,7 @@ importView
 ```python
 import gridly
 from gridly.apis.tags import view_api
+from gridly.model.file_type import FileType
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.gridly.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -830,7 +831,7 @@ with gridly.ApiClient(configuration) as api_client:
     }
     query_params = {
         'importRequest': "{}",
-        'type': "csv",
+        'type': FileType("csv"),
     }
     body = dict(
         file=open('/path/to/file', 'rb'),
@@ -889,11 +890,10 @@ Input Type | Accessed Type | Description | Notes
 None, str,  | NoneClass, str,  |  | if omitted the server will use the default value of "{}"
 
 # TypeSchema
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**FileType**](../../models/FileType.md) |  | 
 
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-None, str,  | NoneClass, str,  |  | must be one of ["csv", "tsv", "xls", "xlsx", "json", "po", "html", ] if omitted the server will use the default value of "csv"
 
 ### path_params
 #### RequestPathParams
@@ -991,6 +991,7 @@ with gridly.ApiClient(configuration) as api_client:
             )
         ],
         use_last_merge_resolve=True,
+        check_mismatched_column_type=True,
         query=[
             FilterField(
                 case_sensitive=True,
@@ -998,7 +999,7 @@ with gridly.ApiClient(configuration) as api_client:
                 dynamic_column="dynamic_column_example",
                 operator="isNull",
                 query_path_tag_via_id=True,
-                sub_field="DEPENDENCY_STATUS",
+                sub_field="_dependencyStatus",
                 values=[
                     dict()
                 ],
@@ -1041,6 +1042,7 @@ with gridly.ApiClient(configuration) as api_client:
             )
         ],
         use_last_merge_resolve=True,
+        check_mismatched_column_type=True,
         query=[
             FilterField(
                 case_sensitive=True,
@@ -1048,7 +1050,7 @@ with gridly.ApiClient(configuration) as api_client:
                 dynamic_column="dynamic_column_example",
                 operator="isNull",
                 query_path_tag_via_id=True,
-                sub_field="DEPENDENCY_STATUS",
+                sub_field="_dependencyStatus",
                 values=[
                     dict()
                 ],

@@ -729,7 +729,7 @@ with gridly.ApiClient(configuration) as api_client:
         'tmId': "tmId_example",
     }
     body = dict(
-        file=dict(),
+        file=open('/path/to/file', 'rb'),
     )
     try:
         # Import a translation memory from tmx file
@@ -763,15 +763,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**[file](#file)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+**file** | bytes, io.FileIO, io.BufferedReader,  | bytes, FileIO,  |  | 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
-
-# file
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### path_params
 #### RequestPathParams

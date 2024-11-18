@@ -634,9 +634,7 @@ with gridly.ApiClient(configuration) as api_client:
         'taskId': "taskId_example",
     }
     query_params = {
-        'mergeRecordOptions': [
-        "add"
-    ],
+        'mergeRecordOptions': ["add","update","delete"],
         'query': "{}",
         'page': "{}",
     }
@@ -805,6 +803,7 @@ with gridly.ApiClient(configuration) as api_client:
             )
         ],
         use_last_merge_resolve=True,
+        check_mismatched_column_type=True,
         query=[
             FilterField(
                 case_sensitive=True,
@@ -812,7 +811,7 @@ with gridly.ApiClient(configuration) as api_client:
                 dynamic_column="dynamic_column_example",
                 operator="isNull",
                 query_path_tag_via_id=True,
-                sub_field="DEPENDENCY_STATUS",
+                sub_field="_dependencyStatus",
                 values=[
                     dict()
                 ],
@@ -855,6 +854,7 @@ with gridly.ApiClient(configuration) as api_client:
             )
         ],
         use_last_merge_resolve=True,
+        check_mismatched_column_type=True,
         query=[
             FilterField(
                 case_sensitive=True,
@@ -862,7 +862,7 @@ with gridly.ApiClient(configuration) as api_client:
                 dynamic_column="dynamic_column_example",
                 operator="isNull",
                 query_path_tag_via_id=True,
-                sub_field="DEPENDENCY_STATUS",
+                sub_field="_dependencyStatus",
                 values=[
                     dict()
                 ],

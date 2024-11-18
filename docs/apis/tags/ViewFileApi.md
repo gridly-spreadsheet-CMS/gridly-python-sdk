@@ -497,7 +497,7 @@ with gridly.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyMultipartFormData, SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyMultipartFormData, Unset] | optional, default is unset |
 path_params | RequestPathParams | |
 content_type | str | optional, default is 'multipart/form-data' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
@@ -508,21 +508,6 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 ### body
 
 # SchemaForRequestBodyMultipartFormData
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
-
-### Dictionary Keys
-Key | Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | ------------- | -------------
-**file** | bytes, io.FileIO, io.BufferedReader,  | bytes, FileIO,  |  | 
-**fileMappings** | str,  | str,  |  | 
-**columnId** | str,  | str,  |  | 
-**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
-
-# SchemaForRequestBodyApplicationJson
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

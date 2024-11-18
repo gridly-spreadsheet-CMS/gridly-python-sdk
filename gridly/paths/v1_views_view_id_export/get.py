@@ -25,6 +25,7 @@ import frozendict  # noqa: F401
 
 from gridly import schemas  # noqa: F401
 
+from gridly.model.file_type import FileType
 from gridly.model.export_file_header import ExportFileHeader
 
 from . import path
@@ -95,67 +96,7 @@ class SortSchema(
             *args,
             _configuration=_configuration,
         )
-
-
-class TypeSchema(
-    schemas.EnumBase,
-    schemas.StrBase,
-    schemas.NoneBase,
-    schemas.Schema,
-    schemas.NoneStrMixin
-):
-
-
-    class MetaOapg:
-        enum_value_to_name = {
-            "csv": "CSV",
-            "tsv": "TSV",
-            "xls": "XLS",
-            "xlsx": "XLSX",
-            "json": "JSON",
-            "po": "PO",
-            "html": "HTML",
-        }
-    
-    @schemas.classproperty
-    def CSV(cls):
-        return cls("csv")
-    
-    @schemas.classproperty
-    def TSV(cls):
-        return cls("tsv")
-    
-    @schemas.classproperty
-    def XLS(cls):
-        return cls("xls")
-    
-    @schemas.classproperty
-    def XLSX(cls):
-        return cls("xlsx")
-    
-    @schemas.classproperty
-    def JSON(cls):
-        return cls("json")
-    
-    @schemas.classproperty
-    def PO(cls):
-        return cls("po")
-    
-    @schemas.classproperty
-    def HTML(cls):
-        return cls("html")
-
-
-    def __new__(
-        cls,
-        *args: typing.Union[None, str, ],
-        _configuration: typing.Optional[schemas.Configuration] = None,
-    ) -> 'TypeSchema':
-        return super().__new__(
-            cls,
-            *args,
-            _configuration=_configuration,
-        )
+TypeSchema = FileType
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -168,7 +109,7 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'fileHeader': typing.Union[FileHeaderSchema, ],
         'query': typing.Union[QuerySchema, None, str, ],
         'sort': typing.Union[SortSchema, None, str, ],
-        'type': typing.Union[TypeSchema, None, str, ],
+        'type': typing.Union[TypeSchema, ],
     },
     total=False
 )

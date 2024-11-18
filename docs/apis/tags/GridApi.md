@@ -184,7 +184,7 @@ with gridly.ApiClient(configuration) as api_client:
                 language_code="enUS",
                 localization_type="sourceLanguage",
                 number_format=NumberFormat(
-                    type="DECIMAL",
+                    type="decimal",
                     decimal_places=1,
                     currency_symbol="currency_symbol_example",
                     use1000_separator=True,
@@ -196,8 +196,8 @@ with gridly.ApiClient(configuration) as api_client:
                     grid_id="grid_id_example",
                     branch_id="branch_id_example",
                     column_id="column_id_example",
-                    type="ROW",
-                    selection_type="SINGLE",
+                    type="row",
+                    selection_type="single",
                 ),
                 formula=Formula(
                     formula_text="formula_text_example",

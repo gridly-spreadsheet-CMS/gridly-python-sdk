@@ -8,7 +8,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  |  | [optional] must be one of ["DECIMAL", "INTEGER", ] 
+**type** | str,  | str,  |  | [optional] must be one of ["decimal", "integer", ] 
 **decimalPlaces** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] value must be a 32 bit integer
 **currencySymbol** | str,  | str,  |  | [optional] 
 **use1000Separator** | bool,  | BoolClass,  |  | [optional] 

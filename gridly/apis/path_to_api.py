@@ -5,6 +5,8 @@ from gridly.apis.paths.v1_views_view_id_shares import V1ViewsViewIdShares
 from gridly.apis.paths.v1_views_view_id_paths_path import V1ViewsViewIdPathsPath
 from gridly.apis.paths.v1_views_view_id_dependencies_dependency_id import V1ViewsViewIdDependenciesDependencyId
 from gridly.apis.paths.v1_grids_grid_id_settings_categories_category_id import V1GridsGridIdSettingsCategoriesCategoryId
+from gridly.apis.paths.v1_cdns_cdn_id_unpublish import V1CdnsCdnIdUnpublish
+from gridly.apis.paths.v1_cdns_cdn_id_publish import V1CdnsCdnIdPublish
 from gridly.apis.paths.v1_views import V1Views
 from gridly.apis.paths.v1_views_view_id_records import V1ViewsViewIdRecords
 from gridly.apis.paths.v1_views_view_id_paths import V1ViewsViewIdPaths
@@ -37,6 +39,7 @@ from gridly.apis.paths.v1_views_view_id_export import V1ViewsViewIdExport
 from gridly.apis.paths.v1_template_grids import V1TemplateGrids
 from gridly.apis.paths.v1_tasks_task_id import V1TasksTaskId
 from gridly.apis.paths.v1_grids_grid_id_settings_files import V1GridsGridIdSettingsFiles
+from gridly.apis.paths.v1_cdns import V1Cdns
 from gridly.apis.paths.v1_branches_branch_id import V1BranchesBranchId
 from gridly.apis.paths.v1_branches_diffcheck_task_id import V1BranchesDiffcheckTaskId
 from gridly.apis.paths.v1_grids_grid_id_settings_categories_category_id_files_file_id import V1GridsGridIdSettingsCategoriesCategoryIdFilesFileId
@@ -63,6 +66,8 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.V1_VIEWS_VIEW_ID_PATHS_PATH: V1ViewsViewIdPathsPath,
         PathValues.V1_VIEWS_VIEW_ID_DEPENDENCIES_DEPENDENCY_ID: V1ViewsViewIdDependenciesDependencyId,
         PathValues.V1_GRIDS_GRID_ID_SETTINGS_CATEGORIES_CATEGORY_ID: V1GridsGridIdSettingsCategoriesCategoryId,
+        PathValues.V1_CDNS_CDN_ID_UNPUBLISH: V1CdnsCdnIdUnpublish,
+        PathValues.V1_CDNS_CDN_ID_PUBLISH: V1CdnsCdnIdPublish,
         PathValues.V1_VIEWS: V1Views,
         PathValues.V1_VIEWS_VIEW_ID_RECORDS: V1ViewsViewIdRecords,
         PathValues.V1_VIEWS_VIEW_ID_PATHS: V1ViewsViewIdPaths,
@@ -95,6 +100,7 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.V1_TEMPLATEGRIDS: V1TemplateGrids,
         PathValues.V1_TASKS_TASK_ID: V1TasksTaskId,
         PathValues.V1_GRIDS_GRID_ID_SETTINGS_FILES: V1GridsGridIdSettingsFiles,
+        PathValues.V1_CDNS: V1Cdns,
         PathValues.V1_BRANCHES_BRANCH_ID: V1BranchesBranchId,
         PathValues.V1_BRANCHES_DIFFCHECK_TASK_ID: V1BranchesDiffcheckTaskId,
         PathValues.V1_GRIDS_GRID_ID_SETTINGS_CATEGORIES_CATEGORY_ID_FILES_FILE_ID: V1GridsGridIdSettingsCategoriesCategoryIdFilesFileId,
@@ -122,6 +128,8 @@ path_to_api = PathToApi(
         PathValues.V1_VIEWS_VIEW_ID_PATHS_PATH: V1ViewsViewIdPathsPath,
         PathValues.V1_VIEWS_VIEW_ID_DEPENDENCIES_DEPENDENCY_ID: V1ViewsViewIdDependenciesDependencyId,
         PathValues.V1_GRIDS_GRID_ID_SETTINGS_CATEGORIES_CATEGORY_ID: V1GridsGridIdSettingsCategoriesCategoryId,
+        PathValues.V1_CDNS_CDN_ID_UNPUBLISH: V1CdnsCdnIdUnpublish,
+        PathValues.V1_CDNS_CDN_ID_PUBLISH: V1CdnsCdnIdPublish,
         PathValues.V1_VIEWS: V1Views,
         PathValues.V1_VIEWS_VIEW_ID_RECORDS: V1ViewsViewIdRecords,
         PathValues.V1_VIEWS_VIEW_ID_PATHS: V1ViewsViewIdPaths,
@@ -154,6 +162,7 @@ path_to_api = PathToApi(
         PathValues.V1_TEMPLATEGRIDS: V1TemplateGrids,
         PathValues.V1_TASKS_TASK_ID: V1TasksTaskId,
         PathValues.V1_GRIDS_GRID_ID_SETTINGS_FILES: V1GridsGridIdSettingsFiles,
+        PathValues.V1_CDNS: V1Cdns,
         PathValues.V1_BRANCHES_BRANCH_ID: V1BranchesBranchId,
         PathValues.V1_BRANCHES_DIFFCHECK_TASK_ID: V1BranchesDiffcheckTaskId,
         PathValues.V1_GRIDS_GRID_ID_SETTINGS_CATEGORIES_CATEGORY_ID_FILES_FILE_ID: V1GridsGridIdSettingsCategoriesCategoryIdFilesFileId,
