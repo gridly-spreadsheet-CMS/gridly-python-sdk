@@ -5,7 +5,7 @@ description = "Gridly API"
 authors = [
   {name = "Gridly Team",email = "support@gridly.com"},
 ]
-license = "MIT"
+license = {text = "MIT"}
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Gridly API"]
 requires-python = ">=3.9"
