@@ -72,6 +72,7 @@ docs/LqaModelApi.md
 docs/MergeBranchRequest.md
 docs/MergeCellConflict.md
 docs/MergeRecordConflict.md
+docs/MergeRecordOption.md
 docs/MovePath.md
 docs/NumberFormat.md
 docs/PathApi.md
@@ -208,6 +209,7 @@ gridly/models/lqa_model_sub_category_response.py
 gridly/models/merge_branch_request.py
 gridly/models/merge_cell_conflict.py
 gridly/models/merge_record_conflict.py
+gridly/models/merge_record_option.py
 gridly/models/move_path.py
 gridly/models/number_format.py
 gridly/models/path_list.py

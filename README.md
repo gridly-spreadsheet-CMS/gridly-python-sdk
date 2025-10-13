@@ -262,6 +262,7 @@ Class | Method | HTTP request | Description
  - [MergeBranchRequest](docs/MergeBranchRequest.md)
  - [MergeCellConflict](docs/MergeCellConflict.md)
  - [MergeRecordConflict](docs/MergeRecordConflict.md)
+ - [MergeRecordOption](docs/MergeRecordOption.md)
  - [MovePath](docs/MovePath.md)
  - [NumberFormat](docs/NumberFormat.md)
  - [PathList](docs/PathList.md)

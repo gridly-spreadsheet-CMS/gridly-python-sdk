@@ -76,6 +76,7 @@ from gridly.models.length_limit_setting import LengthLimitSetting
 from gridly.models.merge_branch_request import MergeBranchRequest
 from gridly.models.merge_cell_conflict import MergeCellConflict
 from gridly.models.merge_record_conflict import MergeRecordConflict
+from gridly.models.merge_record_option import MergeRecordOption
 from gridly.models.move_path import MovePath
 from gridly.models.number_format import NumberFormat
 from gridly.models.path_list import PathList

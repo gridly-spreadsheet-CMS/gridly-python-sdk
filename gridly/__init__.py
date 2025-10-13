@@ -107,6 +107,7 @@ __all__ = [
     "MergeBranchRequest",
     "MergeCellConflict",
     "MergeRecordConflict",
+    "MergeRecordOption",
     "MovePath",
     "NumberFormat",
     "PathList",
@@ -241,6 +242,7 @@ from gridly.models.length_limit_setting import LengthLimitSetting as LengthLimit
 from gridly.models.merge_branch_request import MergeBranchRequest as MergeBranchRequest
 from gridly.models.merge_cell_conflict import MergeCellConflict as MergeCellConflict
 from gridly.models.merge_record_conflict import MergeRecordConflict as MergeRecordConflict
+from gridly.models.merge_record_option import MergeRecordOption as MergeRecordOption
 from gridly.models.move_path import MovePath as MovePath
 from gridly.models.number_format import NumberFormat as NumberFormat
 from gridly.models.path_list import PathList as PathList
