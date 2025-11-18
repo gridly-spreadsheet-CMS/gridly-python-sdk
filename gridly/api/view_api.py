@@ -24,7 +24,6 @@ from gridly.models.create_view import CreateView
 from gridly.models.export_file_header import ExportFileHeader
 from gridly.models.file_type import FileType
 from gridly.models.merge_branch_request import MergeBranchRequest
-from gridly.models.merge_record_option import MergeRecordOption
 from gridly.models.task import Task
 from gridly.models.view import View
 from gridly.models.view_statistic import ViewStatistic
@@ -2165,7 +2164,7 @@ class ViewApi:
         destination_view_id: Annotated[StrictStr, Field(description="destinationViewId")],
         view_id: Annotated[StrictStr, Field(description="viewId")],
         merge_branch_request: MergeBranchRequest,
-        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2190,7 +2189,7 @@ class ViewApi:
         :param merge_branch_request: (required)
         :type merge_branch_request: MergeBranchRequest
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[MergeRecordOption]
+        :type merge_record_options: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2244,7 +2243,7 @@ class ViewApi:
         destination_view_id: Annotated[StrictStr, Field(description="destinationViewId")],
         view_id: Annotated[StrictStr, Field(description="viewId")],
         merge_branch_request: MergeBranchRequest,
-        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2269,7 +2268,7 @@ class ViewApi:
         :param merge_branch_request: (required)
         :type merge_branch_request: MergeBranchRequest
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[MergeRecordOption]
+        :type merge_record_options: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2323,7 +2322,7 @@ class ViewApi:
         destination_view_id: Annotated[StrictStr, Field(description="destinationViewId")],
         view_id: Annotated[StrictStr, Field(description="viewId")],
         merge_branch_request: MergeBranchRequest,
-        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2348,7 +2347,7 @@ class ViewApi:
         :param merge_branch_request: (required)
         :type merge_branch_request: MergeBranchRequest
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[MergeRecordOption]
+        :type merge_record_options: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

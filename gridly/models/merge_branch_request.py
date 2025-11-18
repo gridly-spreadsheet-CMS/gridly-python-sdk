@@ -18,12 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from gridly.models.filter_field import FilterField
 from gridly.models.merge_record_conflict import MergeRecordConflict
-from gridly.models.merge_record_option import MergeRecordOption
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,12 +30,23 @@ class MergeBranchRequest(BaseModel):
     """
     MergeBranchRequest
     """ # noqa: E501
-    merge_record_options: Optional[List[MergeRecordOption]] = Field(default=None, alias="mergeRecordOptions")
+    merge_record_options: Optional[List[StrictStr]] = Field(default=None, alias="mergeRecordOptions")
     merge_record_conflicts: Optional[Annotated[List[MergeRecordConflict], Field(min_length=0, max_length=2000)]] = Field(default=None, alias="mergeRecordConflicts")
     use_last_merge_resolve: Optional[StrictBool] = Field(default=None, alias="useLastMergeResolve")
     check_mismatched_column_type: Optional[StrictBool] = Field(default=None, alias="checkMismatchedColumnType")
     query: Optional[List[FilterField]] = None
     __properties: ClassVar[List[str]] = ["mergeRecordOptions", "mergeRecordConflicts", "useLastMergeResolve", "checkMismatchedColumnType", "query"]
+
+    @field_validator('merge_record_options')
+    def merge_record_options_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in set(['add', 'update', 'delete', 'override']):
+                raise ValueError("each list item must be one of ('add', 'update', 'delete', 'override')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

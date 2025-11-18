@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**merge_record_options** | [**List[MergeRecordOption]**](MergeRecordOption.md) |  | [optional] 
+**merge_record_options** | **List[str]** |  | [optional] 
 **merge_record_conflicts** | [**List[MergeRecordConflict]**](MergeRecordConflict.md) |  | [optional] 
 **use_last_merge_resolve** | **bool** |  | [optional] 
 **check_mismatched_column_type** | **bool** |  | [optional] 

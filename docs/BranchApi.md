@@ -347,7 +347,6 @@ getDiffCheck
 ```python
 import gridly
 from gridly.models.branch_diff_record import BranchDiffRecord
-from gridly.models.merge_record_option import MergeRecordOption
 from gridly.rest import ApiException
 from pprint import pprint
 
@@ -373,7 +372,7 @@ with gridly.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gridly.BranchApi(api_client)
     task_id = 'task_id_example' # str | taskId
-    merge_record_options = ["add","update","delete"] # List[MergeRecordOption] | mergeRecordOptions (optional) (default to ["add","update","delete"])
+    merge_record_options = ["add","update","delete"] # List[str] | mergeRecordOptions (optional) (default to ["add","update","delete"])
     query = '{}' # str | query (optional) (default to '{}')
     page = '{}' # str | page (optional) (default to '{}')
 
@@ -394,7 +393,7 @@ with gridly.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **task_id** | **str**| taskId | 
- **merge_record_options** | [**List[MergeRecordOption]**](MergeRecordOption.md)| mergeRecordOptions | [optional] [default to [&quot;add&quot;,&quot;update&quot;,&quot;delete&quot;]]
+ **merge_record_options** | [**List[str]**](str.md)| mergeRecordOptions | [optional] [default to [&quot;add&quot;,&quot;update&quot;,&quot;delete&quot;]]
  **query** | **str**| query | [optional] [default to &#39;{}&#39;]
  **page** | **str**| page | [optional] [default to &#39;{}&#39;]
 
@@ -512,7 +511,6 @@ merge
 ```python
 import gridly
 from gridly.models.merge_branch_request import MergeBranchRequest
-from gridly.models.merge_record_option import MergeRecordOption
 from gridly.models.task import Task
 from gridly.rest import ApiException
 from pprint import pprint
@@ -541,7 +539,7 @@ with gridly.ApiClient(configuration) as api_client:
     branch_id = 'branch_id_example' # str | branchId
     destination_branch_id = 'destination_branch_id_example' # str | destinationBranchId
     merge_branch_request = gridly.MergeBranchRequest() # MergeBranchRequest | 
-    merge_record_options = [] # List[MergeRecordOption] | mergeRecordOptions (optional) (default to [])
+    merge_record_options = [] # List[str] | mergeRecordOptions (optional) (default to [])
 
     try:
         # merge
@@ -562,7 +560,7 @@ Name | Type | Description  | Notes
  **branch_id** | **str**| branchId | 
  **destination_branch_id** | **str**| destinationBranchId | 
  **merge_branch_request** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
- **merge_record_options** | [**List[MergeRecordOption]**](MergeRecordOption.md)| mergeRecordOptions | [optional] [default to []]
+ **merge_record_options** | [**List[str]**](str.md)| mergeRecordOptions | [optional] [default to []]
 
 ### Return type
 
