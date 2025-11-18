@@ -17,13 +17,14 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr, field_validator
+from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from gridly.models.branch import Branch
 from gridly.models.branch_diff_record import BranchDiffRecord
 from gridly.models.create_branch import CreateBranch
 from gridly.models.merge_branch_request import MergeBranchRequest
+from gridly.models.merge_record_option import MergeRecordOption
 from gridly.models.task import Task
 
 from gridly.api_client import ApiClient, RequestSerialized
@@ -1151,7 +1152,7 @@ class BranchApi:
     def get_diff_check(
         self,
         task_id: Annotated[StrictStr, Field(description="taskId")],
-        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
         query: Annotated[Optional[StrictStr], Field(description="query")] = None,
         page: Annotated[Optional[StrictStr], Field(description="page")] = None,
         _request_timeout: Union[
@@ -1174,7 +1175,7 @@ class BranchApi:
         :param task_id: taskId (required)
         :type task_id: str
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[str]
+        :type merge_record_options: List[MergeRecordOption]
         :param query: query
         :type query: str
         :param page: page
@@ -1230,7 +1231,7 @@ class BranchApi:
     def get_diff_check_with_http_info(
         self,
         task_id: Annotated[StrictStr, Field(description="taskId")],
-        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
         query: Annotated[Optional[StrictStr], Field(description="query")] = None,
         page: Annotated[Optional[StrictStr], Field(description="page")] = None,
         _request_timeout: Union[
@@ -1253,7 +1254,7 @@ class BranchApi:
         :param task_id: taskId (required)
         :type task_id: str
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[str]
+        :type merge_record_options: List[MergeRecordOption]
         :param query: query
         :type query: str
         :param page: page
@@ -1309,7 +1310,7 @@ class BranchApi:
     def get_diff_check_without_preload_content(
         self,
         task_id: Annotated[StrictStr, Field(description="taskId")],
-        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
         query: Annotated[Optional[StrictStr], Field(description="query")] = None,
         page: Annotated[Optional[StrictStr], Field(description="page")] = None,
         _request_timeout: Union[
@@ -1332,7 +1333,7 @@ class BranchApi:
         :param task_id: taskId (required)
         :type task_id: str
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[str]
+        :type merge_record_options: List[MergeRecordOption]
         :param query: query
         :type query: str
         :param page: page
@@ -1729,7 +1730,7 @@ class BranchApi:
         branch_id: Annotated[StrictStr, Field(description="branchId")],
         destination_branch_id: Annotated[StrictStr, Field(description="destinationBranchId")],
         merge_branch_request: MergeBranchRequest,
-        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1754,7 +1755,7 @@ class BranchApi:
         :param merge_branch_request: (required)
         :type merge_branch_request: MergeBranchRequest
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[str]
+        :type merge_record_options: List[MergeRecordOption]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1808,7 +1809,7 @@ class BranchApi:
         branch_id: Annotated[StrictStr, Field(description="branchId")],
         destination_branch_id: Annotated[StrictStr, Field(description="destinationBranchId")],
         merge_branch_request: MergeBranchRequest,
-        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1833,7 +1834,7 @@ class BranchApi:
         :param merge_branch_request: (required)
         :type merge_branch_request: MergeBranchRequest
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[str]
+        :type merge_record_options: List[MergeRecordOption]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1887,7 +1888,7 @@ class BranchApi:
         branch_id: Annotated[StrictStr, Field(description="branchId")],
         destination_branch_id: Annotated[StrictStr, Field(description="destinationBranchId")],
         merge_branch_request: MergeBranchRequest,
-        merge_record_options: Annotated[Optional[List[StrictStr]], Field(description="mergeRecordOptions")] = None,
+        merge_record_options: Annotated[Optional[List[MergeRecordOption]], Field(description="mergeRecordOptions")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1912,7 +1913,7 @@ class BranchApi:
         :param merge_branch_request: (required)
         :type merge_branch_request: MergeBranchRequest
         :param merge_record_options: mergeRecordOptions
-        :type merge_record_options: List[str]
+        :type merge_record_options: List[MergeRecordOption]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

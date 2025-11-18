@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | OK |  -  |
+**201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -610,6 +610,7 @@ merge
 ```python
 import gridly
 from gridly.models.merge_branch_request import MergeBranchRequest
+from gridly.models.merge_record_option import MergeRecordOption
 from gridly.models.task import Task
 from gridly.rest import ApiException
 from pprint import pprint
@@ -638,7 +639,7 @@ with gridly.ApiClient(configuration) as api_client:
     destination_view_id = 'destination_view_id_example' # str | destinationViewId
     view_id = 'view_id_example' # str | viewId
     merge_branch_request = gridly.MergeBranchRequest() # MergeBranchRequest | 
-    merge_record_options = [] # List[str] | mergeRecordOptions (optional) (default to [])
+    merge_record_options = [] # List[MergeRecordOption] | mergeRecordOptions (optional) (default to [])
 
     try:
         # merge
@@ -659,7 +660,7 @@ Name | Type | Description  | Notes
  **destination_view_id** | **str**| destinationViewId | 
  **view_id** | **str**| viewId | 
  **merge_branch_request** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
- **merge_record_options** | [**List[str]**](str.md)| mergeRecordOptions | [optional] [default to []]
+ **merge_record_options** | [**List[MergeRecordOption]**](MergeRecordOption.md)| mergeRecordOptions | [optional] [default to []]
 
 ### Return type
 

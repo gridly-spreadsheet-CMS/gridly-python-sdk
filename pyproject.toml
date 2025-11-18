@@ -1,6 +1,6 @@
 [project]
 name = "gridly"
-version = "1.5.0"
+version = "1.5.1"
 description = "Gridly API"
 authors = [
   {name = "Gridly Team",email = "support@gridly.com"},

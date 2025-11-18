@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**color** | **str** |  | [optional] 
 **column_id** | **str** |  | [optional] 
 **dependency_status** | **str** |  | [optional] 
 **length_limit** | **int** |  | [optional] 
