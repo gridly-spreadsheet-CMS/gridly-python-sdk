@@ -28,6 +28,7 @@ class Cell(BaseModel):
     Cell
     """ # noqa: E501
     column_id: Optional[StrictStr] = Field(default=None, alias="columnId")
+    color: Optional[StrictStr] = None
     dependency_status: Optional[StrictStr] = Field(default=None, alias="dependencyStatus")
     length_limit: Optional[StrictInt] = Field(default=None, alias="lengthLimit")
     line_limit: Optional[StrictInt] = Field(default=None, alias="lineLimit")
@@ -37,7 +38,7 @@ class Cell(BaseModel):
     source_status: Optional[StrictStr] = Field(default=None, alias="sourceStatus")
     tm: Optional[StrictBool] = None
     value: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["columnId", "dependencyStatus", "lengthLimit", "lineLimit", "mt", "readOnly", "referencedIds", "sourceStatus", "tm", "value"]
+    __properties: ClassVar[List[str]] = ["columnId", "color", "dependencyStatus", "lengthLimit", "lineLimit", "mt", "readOnly", "referencedIds", "sourceStatus", "tm", "value"]
 
     @field_validator('dependency_status')
     def dependency_status_validate_enum(cls, value):
@@ -111,6 +112,7 @@ class Cell(BaseModel):
 
         _obj = cls.model_validate({
             "columnId": obj.get("columnId"),
+            "color": obj.get("color"),
             "dependencyStatus": obj.get("dependencyStatus"),
             "lengthLimit": obj.get("lengthLimit"),
             "lineLimit": obj.get("lineLimit"),

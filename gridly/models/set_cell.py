@@ -27,13 +27,14 @@ class SetCell(BaseModel):
     """
     SetCell
     """ # noqa: E501
+    color: Optional[StrictStr] = None
     column_id: Optional[StrictStr] = Field(default=None, alias="columnId")
     dependency_status: Optional[StrictStr] = Field(default=None, alias="dependencyStatus")
     length_limit: Optional[StrictInt] = Field(default=None, alias="lengthLimit")
     referenced_ids: Optional[List[StrictStr]] = Field(default=None, alias="referencedIds")
     source_status: Optional[StrictStr] = Field(default=None, alias="sourceStatus")
     value: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["columnId", "dependencyStatus", "lengthLimit", "referencedIds", "sourceStatus", "value"]
+    __properties: ClassVar[List[str]] = ["color", "columnId", "dependencyStatus", "lengthLimit", "referencedIds", "sourceStatus", "value"]
 
     @field_validator('dependency_status')
     def dependency_status_validate_enum(cls, value):
@@ -106,6 +107,7 @@ class SetCell(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "color": obj.get("color"),
             "columnId": obj.get("columnId"),
             "dependencyStatus": obj.get("dependencyStatus"),
             "lengthLimit": obj.get("lengthLimit"),

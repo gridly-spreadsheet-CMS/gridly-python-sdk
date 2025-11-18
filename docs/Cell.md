@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **column_id** | **str** |  | [optional] 
+**color** | **str** |  | [optional] 
 **dependency_status** | **str** |  | [optional] 
 **length_limit** | **int** |  | [optional] 
 **line_limit** | **int** |  | [optional] 
